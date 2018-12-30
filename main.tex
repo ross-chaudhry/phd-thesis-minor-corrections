@@ -1,0 +1,97 @@
+% -- Minor Corrections to Chaudhry Ph.D Thesis
+% -- Last updated: December 28, 2018
+% -- Hosted at github RSCFIX
+% -- To build: latexmk -pdf main
+
+% ===== Frontmatter
+% -- Document format chosen to be minimal
+% -- Same font size and spacing as original thesis, but less cramped margins
+\documentclass[11 pt]{article}
+
+% -- Base includes
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+% -- Let URL's wrap, from https://tex.stackexchange.com/questions/3033/forcing-linebreaks-in-url
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}    
+
+% -- Geometry
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[onehalfspacing]{setspace}
+
+% -- Could include bibliography/references by uncommenting locations marked with RSCCOULDCITE
+% % -- Citations and bibliography
+% \usepackage[sort&compress,numbers]{natbib}
+% \usepackage[noabbrev, capitalize]{cleveref}  % -- \cref{myfig} looks like Figure~\ref{myfig}
+% \newcommand{\creflastconjunction}{, and }    % --Always use the serial comma
+
+% -- Title
+\usepackage{titling}
+\setlength{\droptitle}{-20 pt}   % -- Make space above title much smaller
+
+\title{Minor Corrections to \\
+   \emph{Modeling and Analysis of Chemical Kinetics \\
+         for Hypersonic Flows in Air} }
+
+\author{Ross S. Chaudhry}
+\date{Last updated \today}
+
+% -- Some aliases, taken from full thesis
+\newcommand{\ol}{\overline}
+\newcommand\myP{\operatorname{P}}
+\newcommand\myerror{\operatorname{\delta}}
+\newcommand\fe{\operatorname{\mathit{f}_e}}
+
+% ===== Main document
+
+\begin{document}
+\maketitle
+
+\noindent
+This document contains minor corrections to Ross S. Chaudhry's Ph.D thesis.
+% This document contains minor corrections to Ross S. Chaudhry's Ph.D thesis~\cite{Chaudhry2018}.     % RSCCOULDCITE
+The latest version of this document may be found at \url{https://github.com/ross-chaudhry/phd-thesis-minor-corrections},
+   or by contacting the author at \href{mailto:chaudhry.ross@gmail.com}{chaudhry.ross@gmail.com}.
+Once the thesis becomes available online, it will be linked here also.
+
+         % -- Syntax to typeset email is from https://tex.stackexchange.com/questions/268/whats-the-best-way-to-write-e-mail-addresses/663#663
+         % -- Should be fixed to include full github and link to full thesis also
+
+% -- Main corrections
+% -- All references to original document should be hardcoded - they are unchangeable and format should be fine
+\begin{enumerate}
+
+\item
+The estimated uncertainty for the conditional PDF, $\myerror\fe$,
+   shown in Equation~(2.38) on page~38, should use $\myP\left(e\right)$
+   instead of $\myP\left(\ol{c}\right)$.
+The corrected equation is,
+%
+\begin{align*}
+   \myerror \fe\left(\ol{c}\right) &= \fe\left(\ol{c}\right) \sqrt{ \left(\frac{\myerror \myP\left(e \cap \ol{c}\right)}{\myP\left(e \cap \ol{c}\right)}\right)^2
+                                                                  + \left(\frac{\myerror \myP\left(           e \right)}{\myP\left(           e \right)}\right)^2 }
+\end{align*}
+
+\item
+Reference~[129] in the thesis, cited on page~95,
+   does not include the journal number, volume, or pages.
+Reference~[90] in the thesis is the same citation and it includes the missing information.
+Thus, Ref.~[129] on page~158 should be replaced by Ref.~[90],
+   and bibliography entry~[129] on page~158 should be removed.
+% The citation in question is Andrienko and Boyd~\cite{AndrienkoB2018}.       % RSCCOULDCITE
+
+% % -- Include very minor formatting errors? No for now, just looks silly
+% \item
+% On page 30, a period is missing in the main text after footnote 2.
+% 
+% \item
+% On page 74, two commas are used instead of one in the fourth line.
+
+\end{enumerate}
+
+% RSCCOULDCITE
+% \bibliographystyle{new-aiaa}
+% \bibliography{Bibliography}
+
+\end{document}
