@@ -2,5 +2,5 @@
 Minor corrections to Ross S. Chaudhry's Ph.D thesis.
 Designed to be updated as mistakes are found.
 
-Last updated January 14, 2019.
-The thesis itself will be linked here when it is made available online.
+Last updated February 19, 2019.
+The thesis itself may be found at <http://hdl.handle.net/11299/201709>.
